@@ -5,5 +5,13 @@
   "main": "index.js",
   "repository": "git@github.com:JMSantos94/cypress-presentation.git",
   "author": "Jose Santos <josemsantos1994@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "pdf": "mdx-deck pdf deck.mdx"
+  },
+  "devDependencies": {
+    "mdx-deck": "^1.5.15"
+  }
 }
