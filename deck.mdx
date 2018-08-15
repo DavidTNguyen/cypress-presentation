@@ -37,7 +37,7 @@ and more!
 * Screenshots and Videos: View screenshots taken automatically on failure, or videos of your entire test suite when run from the CLI.
 ```
 ---
-# How to install it?
+# How to install it? 🔧
 ---
 ```bash
 yarn add cypress -D
@@ -46,5 +46,49 @@ npx cypress open
 ---
 # That's all! 🎉
 ---
+# ✍️
 # Writing your own tests
-Run your server
+---
+* Run your server
+```bash
+yarn start
+```
+* Setup your localhost as Cypress's base-url (optional)
+```jsx
+// cypress.json (root folder)
+{
+    "baseUrl": "http://localhost:3000"
+}
+```
+---
+* Write your first test
+```jsx
+// cypress/integration/login/login.spec.js
+
+describe('Login flow') {    
+    it('Should let the user login', () => {
+        cy.get('#email')
+          .type('jose@gumgum.com')
+          .get('#password')
+          .type('not-my-real-password')
+          .type('{enter}');
+      
+        // Verify user was redirected
+        cy.url()
+          .should('contain', '/home');
+    });
+}
+```
+* Run your test! 🏃‍♀️
+---
+# DEMO 🦉
+---
+# What makes Cypress special? 
+---
+# Question? 🙋
+---
+# THANKS! ❤️
+---
+Slides are available at:
+
+[https://github.com/JMSantos94/cypress-presentation](https://github.com/JMSantos94/cypress-presentation)
